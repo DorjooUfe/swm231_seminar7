@@ -51,10 +51,9 @@ class Semminar7 extends StatefulWidget {
 }
 
 class _Semminar7State extends State<Semminar7> {
+  Widget active = const SizedBox();
   @override
   Widget build(BuildContext context) {
-    List<Widget> list = [SizedBox(), Example1(), Example2()];
-    int active = 0;
     return Scaffold(
         appBar: AppBar(
           // Here we take the value from the Semminar7 object that was created by
@@ -63,21 +62,46 @@ class _Semminar7State extends State<Semminar7> {
         ),
         body: Column(
           children: [
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    active = 1;
-                  });
-                },
-                child: Text('Example 1')),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    active = 2;
-                  });
-                },
-                child: Text('Example 2')),
-            list[active]
+            SizedBox(
+              height: 4,
+            ),
+            Container(
+              color: Colors.purple,
+              width: double.infinity,
+              child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      active = Example1();
+
+                      // print(active);
+                    });
+                  },
+                  child: Text(
+                    'Example 1',
+                    style: TextStyle(color: Colors.white),
+                  )),
+            ),
+            SizedBox(
+              height: 4,
+            ),
+            Container(
+              color: Colors.purple,
+              width: double.infinity,
+              child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      active = Example2();
+                    });
+                  },
+                  child: Text(
+                    'Example 2',
+                    style: TextStyle(color: Colors.white),
+                  )),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            active
           ],
         )
         // This trailing comma makes auto-formatting nicer for build methods.

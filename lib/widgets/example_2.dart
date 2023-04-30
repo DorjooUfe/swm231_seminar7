@@ -5,6 +5,9 @@ class Example2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Example 2');
+    return Text(
+      'Example 2',
+      style: TextStyle(color: Colors.amber, fontSize: 30),
+    );
   }
 }
